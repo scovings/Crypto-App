@@ -4,38 +4,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Crypto Marketplace</title>
+    <title>Fullstack Crypto Marketplace | AsmrProg</title>
 </head>
 
-<body id="dark-theme">
+<body>
+
+    <div class="overlay">
+        <button id="closeMenu"><i class="ri-close-circle-line"></i></button>
+
+        <div class="nav-links">
+            <a href="/index.html" class="active">Home</a>
+            <a href="/pages/charts.html">Charts</a>
+            <a href="/pages/search.html">Search</a>
+            <a href="/pages/about.html">About US</a>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://Youtube.com/AsmrProg"><i class="ri-youtube-line"></i></a>
+            <a href="https://t.me/AsmrProg_Admin"><i class="ri-telegram-line"></i></a>
+            <a href="https://Github.com/AsmrProg-YT"><i class="ri-github-line"></i></a>
+            <a href="#Soon"><i class="ri-discord-line"></i></a>
+        </div>
+
+    </div>
 
     <div class="main">
 
         <div class="global">
-            <p>Coins: <b id="coins-count">14973</b></p>
-            <p>Exchanges: <b id="exchanges-count">1164</b></p>
-            <p>Market Cap: <span><b id="markerCap">$2.297T</b></span id="marketCapChange">-4.9% <i 
-              class="ri-arrow-down-s-fill"></i><span></span></p>
-            <p>24H Vol: <b id="volume">$109.452B</b></p>
-            <p>Dominance: <b id="dominance">BTC 53.0% - ETH 15.6%</b></p>
+            <p>Coins: <b id="coins-count">N/A</b></p>
+            <p>Exchanges: <b id="exchanges-count">N/A</b></p>
+            <p>Market Cap: <span><b id="marketCap">N/A</b> <span id="marketCapChange">N/A <i
+                            class="ri-arrow-down-s-fill"></i></span></span></p>
+            <p>24H Vol: <b id="volume">N/A</b></p>
+            <p>Dominance: <b id="dominance">BTC N/A% - ETH N/A%</b></p>
         </div>
 
         <nav>
             <div class="left-section">
-                <a href="#" class="logo">Crypto.</a>
+                <button id="openMenu"><i class="ri-menu-line"></i></button>
+                <a href="#" class="logo">Logo.</a>
                 <div class="nav-links">
-                    <a href="index.html" class="active">Home</a>
+                    <a href="/index.html" class="active">Home</a>
                     <a href="/pages/charts.html">Charts</a>
                     <a href="/pages/search.html">Search</a>
-                    <a href="/pages/about.html">About</a>
+                    <a href="/pages/about.html">About US</a>
                 </div>
             </div>
             <div class="right-section">
                 <form class="search" id="searchForm">
                     <i class="ri-search-line"></i>
-                    <input type="text" id="searchInput" placeholder="Search for an asset..." required 
+                    <input type="text" id="searchInput" placeholder="Search for an asset..." required
                         autocomplete="off">
                 </form>
                 <i id="theme-toggle" class="ri-sun-line"></i>
@@ -48,123 +68,19 @@
                     <h3>Trending Coins</h3>
                 </div>
                 <div class="container">
-                    <div id="coins-list">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th class="table-fixed-column">Coin</th>
-                                    <th>Price</th>
-                                    <th>Market Cap</th>
-                                    <th>Volume</th>
-                                    <th>24h%</th>
-                                </tr>
-                            </thead>
-                            <tr>
-                                <td class="name-column table-fixed-column"><img src="assets/images/bitcoin.png" alt="Bitcoin">
-                                     Bitcoin <span>(BTC)</span></td>
-                                <td>$0.000101</td>
-                                <td>$15,618,100,563</td>
-                                <td>$342,679,189</td>
-                                <td class="red">-7.67%</td>
-                            </tr>
-                            <tr>
-                                <td class="name-column table-fixed-column"><img src="assets/images/bitcoin.png" alt="Bitcoin">
-                                     Bitcoin <span>(BTC)</span></td>
-                                <td>$0.000101</td>
-                                <td>$15,618,100,563</td>
-                                <td>$342,679,189</td>
-                                <td class="red">-7.67%</td>
-                            </tr>
-                            <tr>
-                                <td class="name-column table-fixed-column"><img src="assets/images/bitcoin.png" alt="Bitcoin">
-                                     Bitcoin <span>(BTC)</span></td>
-                                <td>$0.000101</td>
-                                <td>$15,618,100,563</td>
-                                <td>$342,679,189</td>
-                                <td class="red">-7.67%</td>
-                            </tr>
-                            <tr>
-                                <td class="name-column table-fixed-column"><img src="assets/images/bitcoin.png" alt="Bitcoin">
-                                     Bitcoin <span>(BTC)</span></td>
-                                <td>$0.000101</td>
-                                <td>$15,618,100,563</td>
-                                <td>$342,679,189</td>
-                                <td class="red">-7.67%</td>
-                            </tr>
-                            <tr>
-                                <td class="name-column table-fixed-column"><img src="assets/images/bitcoin.png" alt="Bitcoin">
-                                     Bitcoin <span>(BTC)</span></td>
-                                <td>$0.000101</td>
-                                <td>$15,618,100,563</td>
-                                <td>$342,679,189</td>
-                                <td class="red">-7.67%</td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="spinner" id="coins"></div>
+                    <div id="coins-list"></div>
+                    <div class="spinner" id="coins-list-spinner"></div>
                     <div class="error-message" id="coins-list-error">API limit reached. Please try again later.</div>
                 </div>
             </div>
 
             <div class="nfts-wrapper">
                 <div class="header">
-                    <h3>Trending NFT's</h3>
+                    <h3>Trending NFTs</h3>
                 </div>
                 <div class="container">
-                    <div id="nfts-list">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th class="table-fixed-column">NFT</th>
-                                    <th>Market</th>
-                                    <th>Price</th>
-                                    <th>24h Vol</th>
-                                    <th>24h%</th>
-                                </tr>
-                            </thead>
-                            <tr>
-                                <td class="name-column table-fixed-column"><img src="assets/images/bitcoin.png" alt="Bitcoin">
-                                     Bitcoin <span>(BTC)</span></td>
-                                <td>$0.000101</td>
-                                <td>$15,618,100,563</td>
-                                <td>$342,679,189</td>
-                                <td class="green">7.67%</td>
-                            </tr>
-                            <tr>
-                                <td class="name-column table-fixed-column"><img src="assets/images/bitcoin.png" alt="Bitcoin">
-                                     Bitcoin <span>(BTC)</span></td>
-                                <td>$0.000101</td>
-                                <td>$15,618,100,563</td>
-                                <td>$342,679,189</td>
-                                <td class="red">-7.67%</td>
-                            </tr>
-                            <tr>
-                                <td class="name-column table-fixed-column"><img src="assets/images/bitcoin.png" alt="Bitcoin">
-                                     Bitcoin <span>(BTC)</span></td>
-                                <td>$0.000101</td>
-                                <td>$15,618,100,563</td>
-                                <td>$342,679,189</td>
-                                <td class="red">-7.67%</td>
-                            </tr>
-                            <tr>
-                                <td class="name-column table-fixed-column"><img src="assets/images/bitcoin.png" alt="Bitcoin">
-                                     Bitcoin <span>(BTC)</span></td>
-                                <td>$0.000101</td>
-                                <td>$15,618,100,563</td>
-                                <td>$342,679,189</td>
-                                <td class="red">-7.67%</td>
-                            </tr>
-                            <tr>
-                                <td class="name-column table-fixed-column"><img src="assets/images/bitcoin.png" alt="Bitcoin">
-                                     Bitcoin <span>(BTC)</span></td>
-                                <td>$0.000101</td>
-                                <td>$15,618,100,563</td>
-                                <td>$342,679,189</td>
-                                <td class="red">-7.67%</td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="spinner" id="nfts"></div>
+                    <div id="nfts-list"></div>
+                    <div class="spinner" id="nfts-list-spinner"></div>
                     <div class="error-message" id="nfts-list-error">API limit reached. Please try again later.</div>
                 </div>
             </div>
@@ -173,36 +89,54 @@
 
         <div class="tab-container">
             <div class="tabs">
-                <button class="tab-button active" onclick="openTab(event, 'tab1')"><i class="ri-apps-2-line">
-                     Assets</i></button>
-                <button class="tab-button" onclick="openTab(event, 'tab2')"><i class="ri-arrow-left-right-line">
-                     Exchanges</i></button>
-                <button class="tab-button" onclick="openTab(event, 'tab3')"><i class="ri-exchange-2-line">
-                     Categories</i></button>
-                <button class="tab-button" onclick="openTab(event, 'tab4')"><i class="ri-btc-line">
-                     Holders</i></button>
+                <button class="tab-button active" onclick="openTab(event, 'tab1')"><i class="ri-apps-2-line"></i>
+                    Assets</button>
+                <button class="tab-button" onclick="openTab(event, 'tab2')"><i class="ri-arrow-left-right-line"></i>
+                    Exchanges</button>
+                <button class="tab-button" onclick="openTab(event, 'tab3')"><i class="ri-exchange-2-line"></i>
+                    Categories</button>
+                <button class="tab-button" onclick="openTab(event, 'tab4')"><i class="ri-btc-line"></i> Holders</button>
             </div>
             <div class="tab-content" id="tab1">
-                <div id="asset-list">
-                    <table>
-                        <thead>
-                            <th>Rank</th>
-                            <th class="table-column-fixed">Coin</th>
-                            <th>Price</th>
-                            <th>24h Price</th>
-                            <th>24h Price %</th>
-                            <th>Total Vol</th>
-                            <th>Market Cap</th>
-                            <th>Last 7 Days</th>
-                        </thead>
-                    </table>
-                </div>
+                <div id="asset-list"></div>
+                <div class="spinner" id="asset-list-spinner"></div>
+                <div class="error-message" id="asset-list-error">API limit reached. Please try again later.</div>
+            </div>
+            <div class="tab-content" id="tab2">
+                <div id="exchange-list"></div>
+                <div class="spinner" id="exchange-list-spinner"></div>
+                <div class="error-message" id="exchange-list-error">API limit reached. Please try again later.</div>
+            </div>
+            <div class="tab-content" id="tab3">
+                <div id="category-list"></div>
+                <div class="spinner" id="category-list-spinner"></div>
+                <div class="error-message" id="category-list-error">API limit reached. Please try again later.</div>
+            </div>
+            <div class="tab-content" id="tab4">
+                <div id="company-list"></div>
+                <div class="spinner" id="company-list-spinner"></div>
+                <div class="error-message" id="company-list-error">API limit reached. Please try again later.</div>
             </div>
         </div>
-
-
     </div>
 
+    <footer>
+        <p>AsmrProg Youtube, All Rights Reserved.</p>
+        <div class="social-icons">
+            <a href="https://Youtube.com/AsmrProg"><i class="ri-youtube-line"></i></a>
+            <a href="https://t.me/AsmrProg_Admin"><i class="ri-telegram-line"></i></a>
+            <a href="https://Github.com/AsmrProg-YT"><i class="ri-github-line"></i></a>
+            <a href="#Soon"><i class="ri-discord-line"></i></a>
+        </div>
+    </footer>
+
+    <button onclick="scrollToTop()" id="scrollTop"><i class="ri-arrow-up-s-line"></i></button>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/global.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
